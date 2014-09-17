@@ -34,7 +34,12 @@ if (outcome==outcomes[3]) outcomeindex<-23
 ## preparo un dataset mas peque?o solo con las columnas que interesan
 ## el mombre de hospital 2 y el outcomeindex
 
+## como se han leido como texto es necesario meter un numeric a saco en los
+## valores numericos,  es importante hacerlo solo en esos por que si no podemos
+## joder codigos
+    
     dataAn<-dataState[c(2,outcomeindex)]
+    dataAn[,2]<-as.numeric(dataAn[,2])
     dataAn<-dataAn[order(dataAn[,2],dataAn[,1]),]
     dataAn[1,1]
 }
